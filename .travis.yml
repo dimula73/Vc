@@ -1,9 +1,9 @@
 language: cpp
 
-cache:
-    ccache: true
-    directories:
-        - $HOME/.cache/sde
+#cache:
+#    ccache: true
+#    directories:
+#        - $HOME/.cache/sde
 
 env:
     - arch=x86_64  subset=avx512
@@ -17,7 +17,7 @@ compiler:
 # The following gives us Ubuntu 14.04 LTS instead of 12.04 LTS
 sudo: required
 dist: trusty
-group: deprecated-2017Q2
+#group: deprecated-2017Q2
 
 install:
     - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y &&
