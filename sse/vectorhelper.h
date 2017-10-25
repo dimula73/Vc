@@ -214,6 +214,10 @@ namespace SSE
                 return _mm_cvtepi32_pd(_mm_cvtpd_epi32(a));
 #endif
             }
+
+            static Vc_ALWAYS_INLINE Vc_CONST _M128I iround(VectorType a) {
+                return _mm_cvtpd_epi32(a);
+            }
         };
 
         template<> struct VectorHelper<float> {
@@ -296,6 +300,10 @@ namespace SSE
                 return _mm_cvtepi32_ps(_mm_cvtps_epi32(a));
 #endif
             }
+
+            static Vc_ALWAYS_INLINE Vc_CONST _M128I iround(VectorType a) {
+                return _mm_cvtps_epi32(a);
+            }
         };
 
         template<> struct VectorHelper<int> {
@@ -361,6 +369,7 @@ namespace SSE
             Vc_OP(add) Vc_OP(sub)
 #undef Vc_SUFFIX
             static Vc_ALWAYS_INLINE Vc_CONST VectorType round(VectorType a) { return a; }
+            static Vc_ALWAYS_INLINE Vc_CONST _M128I iround(VectorType a) { return a; }
         };
 
         template<> struct VectorHelper<unsigned int> {
@@ -440,6 +449,7 @@ namespace SSE
             Vc_OP(add) Vc_OP(sub)
 #undef Vc_SUFFIX
             static Vc_ALWAYS_INLINE Vc_CONST VectorType round(VectorType a) { return a; }
+            static Vc_ALWAYS_INLINE Vc_CONST _M128I iround(VectorType a) { return a; }
         };
 
         template<> struct VectorHelper<signed short> {
@@ -507,6 +517,7 @@ namespace SSE
             Vc_OP(add) Vc_OP(sub)
 #undef Vc_SUFFIX
             static Vc_ALWAYS_INLINE Vc_CONST VectorType round(VectorType a) { return a; }
+            static Vc_ALWAYS_INLINE Vc_CONST _M128I iround(VectorType a) { return a; }
         };
 
         template<> struct VectorHelper<unsigned short> {
@@ -610,6 +621,7 @@ namespace SSE
             Vc_OP(add) Vc_OP(sub)
 #undef Vc_SUFFIX
             static Vc_ALWAYS_INLINE Vc_CONST VectorType round(VectorType a) { return a; }
+            static Vc_ALWAYS_INLINE Vc_CONST _M128I iround(VectorType a) { return a; }
         };
 #undef Vc_OP1
 #undef Vc_OP
